@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/SteamClientHomebrew/Praesidium/compare/v1.2.0...v1.2.1) (2025-06-18)
+
+
+### Bug Fixes
+
+* fix CI permissions ([ec96731](https://github.com/SteamClientHomebrew/Praesidium/commit/ec96731ed896c197f5bddc53abc5b3c56c83bb05))
+
 # [1.2.0](https://github.com/SteamClientHomebrew/Praesidium/compare/v1.1.0...v1.2.0) (2025-06-18)
 
 
