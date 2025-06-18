@@ -8,6 +8,11 @@ env:
   BUILD_TYPE: Release
 jobs:
   build:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
