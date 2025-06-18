@@ -27,7 +27,8 @@
     {
       "path": "@semantic-release/github",
       "assets": [
-        "./build/version.dll"
+        "./build/version.dll",
+        "./build/praesidium.dll"
       ]
     }
   ]
