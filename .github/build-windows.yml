@@ -1,0 +1,52 @@
+name: Build Project
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+env:
+  BUILD_TYPE: Release
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Install prerequisites
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: mingw64
+          install: mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-ninja unzip
+
+      - name: (Dependency) Install vcpkg
+        shell: pwsh
+        run: ./vendor/vcpkg/bootstrap-vcpkg.bat && ./vendor/vcpkg/vcpkg integrate install
+
+      - name: (Generator) Configure CMake
+        shell: msys2 {0}
+        run: cmake --preset=windows-mingw-release -DGITHUB_ACTION_BUILD=ON
+
+      - name: Build
+        shell: msys2 {0}
+        run: cmake --build build --config Release -- -j$(nproc)
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: ${{github.workspace}}/build/version.dll
+
+      - name: Install Semantic Release
+        run: npm install --save-dev semantic-release @semantic-release/github @semantic-release/exec @semantic-release/changelog @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
