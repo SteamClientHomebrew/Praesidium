@@ -1,0 +1,12 @@
+# 1.0.0 (2025-06-18)
+
+
+### Bug Fixes
+
+* fix builder CI ([f21a357](https://github.com/SteamClientHomebrew/Praesidium/commit/f21a35750279dff42f414a8d92ff6e89b2d1be8f))
+
+
+### Features
+
+* add builder ([6cccb76](https://github.com/SteamClientHomebrew/Praesidium/commit/6cccb7654d60d140a1d6940a68af91df03104f04))
+* Build library as praesidium.dll ([2813a38](https://github.com/SteamClientHomebrew/Praesidium/commit/2813a38fc9f971d39f4bc205e34258194440f07d))
