@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/SteamClientHomebrew/Praesidium/compare/v1.1.0...v1.2.0) (2025-06-18)
+
+
+### Features
+
+* create first release. ([fa3c948](https://github.com/SteamClientHomebrew/Praesidium/commit/fa3c948d9444a49f5a77a63959979d0a41152031))
+
 # [1.1.0](https://github.com/SteamClientHomebrew/Praesidium/compare/v1.0.0...v1.1.0) (2025-06-18)
 
 
