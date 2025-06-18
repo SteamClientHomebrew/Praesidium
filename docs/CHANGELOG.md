@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/SteamClientHomebrew/Praesidium/compare/v1.0.0...v1.1.0) (2025-06-18)
+
+
+### Features
+
+* add praesidium to semantic release assets ([1a49067](https://github.com/SteamClientHomebrew/Praesidium/commit/1a4906747794b310e9e27c935ffe19ddee5efd68))
+
 # 1.0.0 (2025-06-18)
 
 
