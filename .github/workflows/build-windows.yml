@@ -39,7 +39,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: ${{github.workspace}}/build/version.dll
+          path: |
+            ${{github.workspace}}/build/version.dll
+            ${{github.workspace}}/build/praesidium.dll
 
       - name: Install Semantic Release
         run: npm install --save-dev semantic-release @semantic-release/github @semantic-release/exec @semantic-release/changelog @semantic-release/git
